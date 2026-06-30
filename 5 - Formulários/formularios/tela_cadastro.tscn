@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0r3lq8si8qg"]
+
+[ext_resource type="Script" path="res://tela_cadastro.gd" id="1_rxmno"]
+
+[node name="TelaCadastro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rxmno")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 478.0
+offset_bottom = 505.0
+
+[node name="InputNome" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+placeholder_text = "InputNome"
+
+[node name="InputEmail" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+placeholder_text = "InputEmail"
+
+[node name="InputSenha" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+placeholder_text = "InputSenha"
+
+[node name="InputConfirmarSenha" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+placeholder_text = "InputConfirmarSenha"
+
+[node name="BotaoCadastrar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Cadastrar"
+
+[node name="LabelMensagem" type="Label" parent="VBoxContainer"]
+layout_mode = 2
