@@ -1,0 +1,349 @@
+[gd_scene load_steps=5 format=3 uid="uid://tj5a1hp8q4tw"]
+
+[ext_resource type="Script" uid="uid://di3shgl3yvvfw" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="Texture2D" uid="uid://xuav70ci2b0k" path="res://assets/hospital_map.png" id="2_map"]
+[ext_resource type="PackedScene" path="res://scenes/Player.tscn" id="3_player"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall"]
+size = Vector2(1, 1)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_main")
+
+[node name="Map" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(764, 416)
+scale = Vector2(2, 2)
+texture = ExtResource("2_map")
+
+[node name="Colliders" type="Node2D" parent="."]
+
+[node name="BottomWall" type="StaticBody2D" parent="Colliders"]
+position = Vector2(764, 827)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/BottomWall"]
+scale = Vector2(1528, 12)
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="LeftWall" type="StaticBody2D" parent="Colliders"]
+position = Vector2(16, 476)
+scale = Vector2(1.76, 0.84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/LeftWall"]
+scale = Vector2(16, 832)
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="RightWall" type="StaticBody2D" parent="Colliders"]
+position = Vector2(1514, 739)
+scale = Vector2(1.82137, 0.22654)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/RightWall"]
+scale = Vector2(16, 832)
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="TopLeftMachinesCollider" type="StaticBody2D" parent="Colliders"]
+position = Vector2(219, 207)
+scale = Vector2(1.08989, 1.61616)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/TopLeftMachinesCollider"]
+scale = Vector2(352, 108)
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="ReceptionWallCollider" type="StaticBody2D" parent="Colliders"]
+position = Vector2(526, 110)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/ReceptionWallCollider"]
+scale = Vector2(282, 92)
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="ReceptionDeskCollider" type="StaticBody2D" parent="Colliders"]
+position = Vector2(541, 249)
+scale = Vector2(1.02376, 4.60238)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/ReceptionDeskCollider"]
+scale = Vector2(276, 32)
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="KioskCollider" type="StaticBody2D" parent="Colliders"]
+position = Vector2(203, 433)
+scale = Vector2(6.91196, 0.797423)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/KioskCollider"]
+scale = Vector2(58, 72)
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="UpperCenterDevicesCollider" type="StaticBody2D" parent="Colliders"]
+position = Vector2(999, 197)
+scale = Vector2(2.34404, 1.3917)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/UpperCenterDevicesCollider"]
+scale = Vector2(298, 96)
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="StairsCollider" type="StaticBody2D" parent="Colliders"]
+position = Vector2(1319, 325)
+scale = Vector2(0.17247, 0.982875)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StairsCollider"]
+scale = Vector2(144, 252)
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="UpperRightDevicesCollider" type="StaticBody2D" parent="Colliders"]
+position = Vector2(1306, 615)
+scale = Vector2(2.26309, -3.15356)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/UpperRightDevicesCollider"]
+scale = Vector2(228, 104)
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="CenterPlantCollider" type="StaticBody2D" parent="Colliders"]
+position = Vector2(898, 442)
+scale = Vector2(4.59939, -1.02665)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/CenterPlantCollider"]
+scale = Vector2(64, 72)
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="LowerLeftRoomTopWallCollider" type="StaticBody2D" parent="Colliders"]
+position = Vector2(242, 520)
+scale = Vector2(1, 7.32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/LowerLeftRoomTopWallCollider"]
+scale = Vector2(476, 18)
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="GlassCorridorLeftEdgeCollider" type="StaticBody2D" parent="Colliders"]
+position = Vector2(446, 774)
+scale = Vector2(4.84612, 0.34187)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/GlassCorridorLeftEdgeCollider"]
+scale = Vector2(14, 360)
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="GlassCorridorRightEdgeCollider" type="StaticBody2D" parent="Colliders"]
+position = Vector2(636, 778)
+scale = Vector2(-5.05961, 0.36289)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/GlassCorridorRightEdgeCollider"]
+scale = Vector2(14, 360)
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="GlassCorridorTopCapLeftCollider" type="StaticBody2D" parent="Colliders"]
+position = Vector2(443, 551)
+scale = Vector2(0.726315, 10.5997)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/GlassCorridorTopCapLeftCollider"]
+scale = Vector2(96, 18)
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="GlassCorridorTopCapRightCollider" type="StaticBody2D" parent="Colliders"]
+position = Vector2(639, 552)
+scale = Vector2(0.708689, 10.3336)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/GlassCorridorTopCapRightCollider"]
+scale = Vector2(96, 18)
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="MiddleRoomTopWallCollider" type="StaticBody2D" parent="Colliders"]
+position = Vector2(831, 520)
+scale = Vector2(1, 8.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/MiddleRoomTopWallCollider"]
+scale = Vector2(446, 18)
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="RightRoomTopWallCollider" type="StaticBody2D" parent="Colliders"]
+position = Vector2(1352, 454)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/RightRoomTopWallCollider"]
+scale = Vector2(352, 18)
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="Patient" parent="." instance=ExtResource("3_player")]
+position = Vector2(240, 366)
+
+[node name="Professional" parent="." instance=ExtResource("3_player")]
+position = Vector2(1000, 666)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+limit_left = 0
+limit_top = 0
+limit_right = 1528
+limit_bottom = 832
+position_smoothing_enabled = true
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Root" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TopBar" type="PanelContainer" parent="HUD/Root"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 14.0
+offset_right = 520.0
+offset_bottom = 92.0
+
+[node name="TopInfo" type="VBoxContainer" parent="HUD/Root/TopBar"]
+layout_mode = 2
+
+[node name="RoleLabel" type="Label" parent="HUD/Root/TopBar/TopInfo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Jogador: Paciente"
+
+[node name="HintLabel" type="Label" parent="HUD/Root/TopBar/TopInfo"]
+layout_mode = 2
+text = "WASD/setas movem, E interage, Tab troca personagem"
+
+[node name="StatusPanel" type="PanelContainer" parent="HUD/Root"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 104.0
+offset_right = 520.0
+offset_bottom = 154.0
+
+[node name="StatusLabel" type="Label" parent="HUD/Root/StatusPanel"]
+layout_mode = 2
+text = "Paciente: vá ao totem para registrar sintomas."
+
+[node name="SymptomPanel" type="PanelContainer" parent="HUD/Root"]
+visible = false
+layout_mode = 0
+offset_left = 360.0
+offset_top = 132.0
+offset_right = 920.0
+offset_bottom = 524.0
+
+[node name="SymptomBox" type="VBoxContainer" parent="HUD/Root/SymptomPanel"]
+layout_mode = 2
+
+[node name="SymptomTitle" type="Label" parent="HUD/Root/SymptomPanel/SymptomBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Totem de triagem"
+
+[node name="CpfInput" type="LineEdit" parent="HUD/Root/SymptomPanel/SymptomBox"]
+layout_mode = 2
+text = "6"
+placeholder_text = "CPF do paciente"
+max_length = 14
+
+[node name="SymptomText" type="TextEdit" parent="HUD/Root/SymptomPanel/SymptomBox"]
+custom_minimum_size = Vector2(520, 170)
+layout_mode = 2
+text = "Dor de garganta, febre e tosse seca há dois dias."
+placeholder_text = "Descreva apenas os sintomas do paciente."
+
+[node name="SymptomButtons" type="HBoxContainer" parent="HUD/Root/SymptomPanel/SymptomBox"]
+layout_mode = 2
+
+[node name="SendSymptomsButton" type="Button" parent="HUD/Root/SymptomPanel/SymptomBox/SymptomButtons"]
+layout_mode = 2
+text = "Enviar triagem"
+
+[node name="CloseSymptomsButton" type="Button" parent="HUD/Root/SymptomPanel/SymptomBox/SymptomButtons"]
+layout_mode = 2
+text = "Fechar"
+
+[node name="ReviewPanel" type="PanelContainer" parent="HUD/Root"]
+visible = false
+layout_mode = 0
+offset_left = 336.0
+offset_top = 112.0
+offset_right = 944.0
+offset_bottom = 568.0
+
+[node name="ReviewBox" type="VBoxContainer" parent="HUD/Root/ReviewPanel"]
+layout_mode = 2
+
+[node name="ReviewTitle" type="Label" parent="HUD/Root/ReviewPanel/ReviewBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Computador da recepção"
+
+[node name="ReviewText" type="RichTextLabel" parent="HUD/Root/ReviewPanel/ReviewBox"]
+custom_minimum_size = Vector2(568, 300)
+layout_mode = 2
+bbcode_enabled = true
+text = "Nenhuma triagem pendente."
+
+[node name="ReviewButtons" type="HBoxContainer" parent="HUD/Root/ReviewPanel/ReviewBox"]
+layout_mode = 2
+
+[node name="ConfirmButton" type="Button" parent="HUD/Root/ReviewPanel/ReviewBox/ReviewButtons"]
+layout_mode = 2
+text = "Confirmar para paciente"
+
+[node name="CloseReviewButton" type="Button" parent="HUD/Root/ReviewPanel/ReviewBox/ReviewButtons"]
+layout_mode = 2
+text = "Fechar"
+
+[node name="TouchControls" type="Control" parent="HUD/Root"]
+anchors_preset = 0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -190.0
+mouse_filter = 2
+
+[node name="UpButton" type="Button" parent="HUD/Root/TouchControls"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 14.0
+offset_right = 164.0
+offset_bottom = 72.0
+text = "↑"
+
+[node name="DownButton" type="Button" parent="HUD/Root/TouchControls"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 124.0
+offset_right = 164.0
+offset_bottom = 182.0
+text = "↓"
+
+[node name="LeftButton" type="Button" parent="HUD/Root/TouchControls"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 70.0
+offset_right = 92.0
+offset_bottom = 128.0
+text = "←"
+
+[node name="RightButton" type="Button" parent="HUD/Root/TouchControls"]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 70.0
+offset_right = 236.0
+offset_bottom = 128.0
+text = "→"
+
+[node name="InteractButton" type="Button" parent="HUD/Root/TouchControls"]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -206.0
+offset_top = 42.0
+offset_right = -54.0
+offset_bottom = 104.0
+text = "Interagir"
+
+[node name="SwitchButton" type="Button" parent="HUD/Root/TouchControls"]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -206.0
+offset_top = 116.0
+offset_right = -54.0
+offset_bottom = 178.0
+text = "Trocar"
