@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://ds35tuk41n4t7"]
+
+[ext_resource type="Script" uid="uid://cuhd3vk3b3600" path="res://control.gd" id="1_0fbet"]
+[ext_resource type="Texture2D" uid="uid://baiw35ighm3e7" path="res://icon.png" id="2_ee4bf"]
+[ext_resource type="Texture2D" uid="uid://cnxj4vtycebvm" path="res://Background.jpg" id="2_kbped"]
+[ext_resource type="Texture2D" uid="uid://d4l2deyvabs6" path="res://emptyPB.jpg" id="2_qtu10"]
+[ext_resource type="Texture2D" uid="uid://6xieb4q18e47" path="res://fillPB.jpg" id="3_qtu10"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kbped"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kbped"]
+texture = ExtResource("2_qtu10")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fj5cn"]
+texture = ExtResource("3_qtu10")
+
+[node name="Control" type="Control" unique_id=648591775]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0fbet")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1835648191]
+layout_mode = 0
+offset_left = -5.0
+offset_right = 1275.0
+offset_bottom = 717.0
+texture = ExtResource("2_kbped")
+
+[node name="MainContainer" type="MarginContainer" parent="." unique_id=1359092238]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 32.0
+offset_right = 1114.0
+offset_bottom = 610.0
+
+[node name="LayoutVertical" type="VBoxContainer" parent="MainContainer" unique_id=486591777]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MainContainer/LayoutVertical" unique_id=1118349250]
+material = SubResource("CanvasItemMaterial_kbped")
+layout_mode = 2
+texture = ExtResource("2_ee4bf")
+stretch_mode = 3
+
+[node name="BarraProgresso" type="ProgressBar" parent="MainContainer/LayoutVertical" unique_id=1941818636]
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_kbped")
+theme_override_styles/fill = SubResource("StyleBoxTexture_fj5cn")
