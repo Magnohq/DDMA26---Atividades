@@ -1,27 +1,24 @@
 extends Control
 
-# Pega a referência dos Labels
 @onready var expressao_label = $VBoxContainer/PanelContainer/VBoxContainer/expressao_label
 @onready var resultado_label = $VBoxContainer/PanelContainer/VBoxContainer/resultado_label
 @onready var painel = $VBoxContainer/PanelContainer
 
-# Variáveis de Estado
 var numero_atual: String = ""
 var numero_anterior: float = 0.0
 var operacao_atual: String = ""
 var aguardando_segundo_numero: bool = false
 
-# Dicionário de Cores
 var cores = {
-	"+": Color("#4CAF50"),  # Verde
-	"−": Color("#FFC107"),  # Amarelo
-	"×": Color("#F44336"),  # Vermelho
-	"÷": Color("#2196F3"),  # Azul
-	"C": Color("#424242")   # Cinza
+	"+": Color("#4CAF50"),
+	"−": Color("#FFC107"),
+	"×": Color("#9C27B0"),
+	"÷": Color("#2196F3"),
+	"C": Color("#424242"),
+	"ERRO": Color("#F44336")
 }
 
 func _ready() -> void:
-	# Conecta todos os botões do grupo "botoes" de uma vez só
 	for botao in get_tree().get_nodes_in_group("botoes"):
 		botao.pressed.connect(_on_button_pressed.bind(botao.text))
 	resetar_calculadora()
@@ -60,9 +57,9 @@ func calcular_resultado() -> void:
 	var segundo_numero = numero_atual.to_float()
 	var resultado: float = 0.0
 	
-	# Previne divisão por zero
 	if operacao_atual == "÷" and segundo_numero == 0.0:
-		resultado_label.text = "Erro! 🚫"
+		resultado_label.text = "Erro!"
+		mudar_cor(cores["ERRO"])
 		return
 		
 	match operacao_atual:
@@ -73,7 +70,7 @@ func calcular_resultado() -> void:
 		
 	expressao_label.text = str(numero_anterior) + " " + operacao_atual + " " + str(segundo_numero) + " ="
 	resultado_label.text = str(resultado)
-	numero_atual = str(resultado) # Permite continuar calculando a partir do resultado
+	numero_atual = str(resultado)
 	aguardando_segundo_numero = true
 	operacao_atual = ""
 
