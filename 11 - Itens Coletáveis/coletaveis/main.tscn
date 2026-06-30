@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dey62bjh05uut"]
+
+[ext_resource type="Script" uid="uid://b0gatwpttbrc1" path="res://Hud.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://p4osfrgosoh6" path="res://Player.tscn" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://c3lmwrquip4kt" path="res://Item.tscn" id="2_h2yge"]
+
+[node name="Main" type="Node2D" unique_id=1883302475]
+
+[node name="Player" parent="." unique_id=34332443 instance=ExtResource("1_h2yge")]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=30459076]
+script = ExtResource("1_0xm2m")
+
+[node name="Contador" type="Label" parent="HUD" unique_id=1510321006]
+offset_left = 24.0
+offset_top = 12.0
+offset_right = 81.0
+offset_bottom = 35.0
+text = "Itens: 0"
+
+[node name="Item" parent="." unique_id=1115734558 instance=ExtResource("2_h2yge")]
+position = Vector2(222, 107)
+collision_layer = 2
